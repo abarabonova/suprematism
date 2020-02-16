@@ -5,24 +5,39 @@ body {
 }
 
 main {
-  background: #EDEBE5;
+  background: #D7D5D5;
+  width: 100vw;
+  height: 100vh;
 }
+
 
 .main__rectangle {
   width: 300px;
   height: 300px;
 
-  background: #3559B7;
+  background: #090808;
+
   position: absolute;
-  z-index: 3;
+  top: 30px;
+  left: 120px;
+
+  /* transform: rotate(80deg); */
+
+  z-index: 4;
 }
 
 .main__rectangle__2 {
   width: 100px;
   height: 400px;
 
-  background: #D82626;
+  background: #7B6060;
+
   position: absolute;
+  top: 70px;
+  right: 240px;
+
+  /* transform: rostate(40deg); */
+
   z-index: 2;
 }
 
@@ -30,7 +45,7 @@ main {
   width: 50px;
   height: 200px;
 
-  background: #1f1f1f;
+  background: #B6B3AA;
   position: absolute;
   z-index: 5;
 }
@@ -40,8 +55,12 @@ main {
   height: 300px;
   border-radius: 50%;
 
-  background: #459E1C;
+  background: #687163;
+
   position: absolute;
+  bottom: 120px;
+  right: 450px;
+
   z-index: 6;
 }
 
@@ -50,7 +69,7 @@ main {
   height: 100px;
   border-radius: 50%;
 
-  background: #D89126;
+  background: #C2CBBE;
   position: absolute;
   z-index: 4;
 }
