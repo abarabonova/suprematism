@@ -11,6 +11,26 @@ let recOne = anime({
 let r1 = document.getElementById('r1')
 r1.onclick = recOne.play
 
+let prevTranslateXRecOne = 0
+let funcRecOne = document.getElementById('r1')
+funcRecOne.onclick = function() {
+  anime({
+    targets: '.main__rectangle',
+    translateX: function() {
+      return prevTranslateXRecOne + anime.random(-300, 300)
+    },
+    translateY: function() {
+      return prevTranslateXRecOne + anime.random(-300, 300)
+    },
+    rotate: function () {
+      return prevTranslateXRecOne + anime.random(0, 180)
+    },
+    changeComplete: function(r1) {
+      prevTranslateXRecOne = Number(r1.animations[0].currentValue.slice(0,-10))
+    }
+  })
+}
+
 
 //main__rectangle__2
 
