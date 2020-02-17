@@ -13,41 +13,26 @@ main {
 
 .main__rectangle {
   width: 300px;
-  height: 300px;
-
-  background: #090808;
 
   position: absolute;
   top: 30px;
-  left: 120px;
-
-  /* transform: rotate(80deg); */
-  transform: translateX(0px) rotate(30deg);
+  right: 120px;
 
   z-index: 4;
 }
 
 .main__rectangle__2 {
-  width: 100px;
-  height: 400px;
-
-  background: #7B6060;
+  width: 500px;
 
   position: absolute;
-  top: 70px;
-  right: 240px;
-
-  /* transform: rostate(40deg); */
+  bottom: 68px;
+  left: 140px;
 
   z-index: 2;
 }
 
 .main__rectangle__3 {
-  width: 50px;
-  height: 200px;
-
-  background: #B6B3AA;
-
+  width: 300px;
   position: absolute;
   top: 40px;
   left: 500px;
@@ -56,23 +41,16 @@ main {
 }
 
 .main__rectangle__4 {
-  width: 50px;
-  height: 600px;
+  width: 500px;
 
-  background: #B4AC93;
-
-  position: absolute;
-  top: 30px;
-  right: 70px;
+  top: -90px;
+  right: 20px;
 
   z-index: 2;
 }
 
 .main__rectangle__5 {
-  width: 50px;
-  height: 600px;
-
-  background: #fff;
+  width: 300px;
 
   position: absolute;
   bottom: 40px;
@@ -82,16 +60,33 @@ main {
 }
 
 .main__rectangle__6 {
-  width: 450px;
-  height: 800px;
+  width: 250px;
 
-  background: #A39F92;
+  position: absolute;
+  top: 40px;
+  left: 270px;
+
+  z-index: 9;
+}
+
+.main__rectangle__7 {
+  width: 400px;
 
   position: absolute;
   bottom: 40px;
-  right: 170px;
+  right: 40px;
 
-  z-index: 1;
+  z-index: 10;
+}
+
+.main__rectangle__8 {
+  width: 610px;
+
+  position: absolute;
+  top: 340px;
+  right: 130px;
+
+  z-index: 2;
 }
 
 
@@ -100,7 +95,7 @@ main {
   height: 300px;
   border-radius: 50%;
 
-  background: #687163;
+  background: #4A4A4A;
 
   position: absolute;
   bottom: 120px;
@@ -114,7 +109,7 @@ main {
   height: 100px;
   border-radius: 50%;
 
-  background: #C2CBBE;
+  background: #8F8F8F;
 
   position: absolute;
   bottom: 148px;
