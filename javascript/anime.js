@@ -5,6 +5,7 @@ let recOne = anime({
   translateX: 300,
   rotate: 150,
   easing: 'easeInOutQuad',
+  duration: 3000,
   autoplay: false
 })
 
@@ -36,11 +37,13 @@ funcRecOne.onclick = function() {
 
 let recTwo = anime({
   targets: '.main__rectangle__2',
-  translateX: -600,
-  translateY: 100,
-  rotate: 300,
+  translateX: 400,
+  rotate: 200,
+  autoplay: false,
+  duration: 7000,
+  direction: 'alternate',
   easing: 'easeInOutQuad',
-  autoplay: false
+  loop: true
 })
 
 let r2 = document.getElementById('r2')
@@ -52,14 +55,114 @@ let recThree = anime({
   targets: '.main__rectangle__3',
   translateX: 200,
   translateY: -100,
-  rotate: 120,
-  borderRadius: ['0%', '50%'],
+  rotate: 190,
+  direction: 'alternate',
+  loop: true,
+  duration: 2000,
   easing: 'easeInOutQuart',
   autoplay: false
 })
 
 let r3 = document.getElementById('r3')
 r3.onclick = recThree.play
+
+
+//main__rectangle__4
+
+let recFour = anime({
+  targets: '.main__rectangle__4',
+  translateY: 500,
+  rotate: 360,
+  direction: 'alternate',
+  loop: true,
+  duration: 10000,
+  easing: 'steps(5)',
+  autoplay: false
+})
+
+let r4 = document.getElementById('r4')
+r4.onclick = recFour.play
+
+
+
+//main__rectangle__5
+
+let recFive = anime({
+  targets: '.main__rectangle__5',
+  rotate: 360,
+  direction: 'alternate',
+  loop: true,
+  duration: 5000,
+  easing: 'easeInOutQuart',
+  autoplay: false
+})
+
+let r5 = document.getElementById('r5')
+r5.onclick = recFive.play
+
+
+// main__rectangle__6
+
+let prevTranslateX = 0
+let recSix = document.getElementById('r6')
+recSix.onclick = function() {
+  anime({
+    targets: '.main__rectangle__6',
+    translateX: function() {
+      return prevTranslateX + anime.random(-100, 100)
+    },
+    translateY: function() {
+      return prevTranslateX + anime.random(-100, 100)
+    },
+    changeComplete: function(r6) {
+      prevTranslateX = Number(r6.animations[0].currentValue.slice(0,-10))
+    }
+  })
+}
+
+
+//main__rectangle__7
+
+let recSev = anime({
+  targets: '.main__rectangle__7',
+  rotate: 360,
+  direction: 'alternate',
+  loop: true,
+  duration: 8000,
+  easing: 'easeInOutQuart',
+  autoplay: false,
+  skew: 80,
+  keyframes: [
+  {translateY: -70},
+  {translateX: -250},
+  {translateY: -100},
+  {translateX: -10},
+  {translateY: 0}
+],
+})
+
+let r7 = document.getElementById('r7')
+r7.onclick = recSev.play
+
+
+//main__rectangle__8
+
+let recEigh = anime({
+  targets: '.main__rectangle__8',
+  rotate: 30,
+  direction: 'alternate',
+  loop: true,
+  duration: 8000,
+  easing: 'easeInOutQuart',
+  autoplay: false,
+  translateX: function() {
+    return anime.random(0, 270);
+  }
+})
+
+let r8 = document.getElementById('r8')
+r8.onclick = recEigh.play
+
 
 
 //main__circle
@@ -70,19 +173,29 @@ let cirOne = anime({
   autoplay: false
 })
 
-let prevTranslateX = 0
+let prevTransform = 0
 let funcCirOne = document.getElementById('c1')
 funcCirOne.onclick = function() {
   anime({
     targets: '.main__circle',
     translateX: function() {
-      return prevTranslateX + anime.random(-300, 300)
+      return prevTransform + anime.random(-300, 300)
     },
     translateY: function() {
-      return prevTranslateX + anime.random(-300, 300)
-    },
-    changeComplete: function(c1) {
-      prevTranslateX = Number(c1.animations[0].currentValue.slice(0,-10))
+      return prevTransform + anime.random(-300, 300)
     }
   })
 }
+
+//main__circle__2
+
+let cirTwo = anime({
+  targets: '.main__circle__2',
+  delay: 100,
+  direction: 'alternate',
+  autoplay: false,
+  loop: true
+})
+
+let c2 = document.getElementById('c2')
+c2.onclick = cirTwo.play
