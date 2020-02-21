@@ -191,11 +191,18 @@ funcCirOne.onclick = function() {
 
 let cirTwo = anime({
   targets: '.main__circle__2',
-  delay: 100,
-  direction: 'alternate',
+  keyframes: [
+    {translateY: -40},
+    {translateX: -250},
+    {translateY: -100},
+    {translateX: 0},
+    {translateY: 0}
+  ],
+  duration: 4000,
+  easing: 'easeOutElastic(1, .8)',
   autoplay: false,
   loop: true
-})
+  })
 
 let c2 = document.getElementById('c2')
 c2.onclick = cirTwo.play
