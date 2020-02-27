@@ -91,7 +91,7 @@ r3.onclick = recThree.play
 let recAnimation = anime({
   targets: '.main__rectangle__3',
   translateY: '5vw',
-  translateX: '60vw',
+  translateX: '-30vw',
   rotate: '180',
   easing: 'linear',
   autoplay: false
@@ -126,7 +126,24 @@ let recFour = anime({
 let r4 = document.getElementById('r4')
 r4.onclick = recFour.play
 
-
+let box4Animation = anime({
+  targets: '.main__rectangle__4',
+  translateY: '100%',
+  translateX: '100%',
+  rotate: '100',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__2')
+.on('progress', e => {
+  box4Animation.seek(box4Animation.duration * e.progress)
+})
 
 //main__rectangle__5
 
@@ -143,6 +160,24 @@ let recFive = anime({
 let r5 = document.getElementById('r5')
 r5.onclick = recFive.play
 
+let box5Animation = anime({
+  targets: '.main__rectangle__5',
+  translateY: '30%',
+  translateX: '30%',
+  rotate: '100',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: '0.2',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__5')
+.on('progress', e => {
+  box5Animation.seek(box5Animation.duration * e.progress)
+})
 
 // main__rectangle__6
 
@@ -163,6 +198,24 @@ recSix.onclick = function() {
   })
 }
 
+let box6Animation = anime({
+  targets: '.main__rectangle__6',
+  translateY: '50vw',
+  translateX: '40vw',
+  rotate: '10',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__4')
+.on('progress', e => {
+  box6Animation.seek(box6Animation.duration * e.progress)
+})
 
 //main__rectangle__7
 
@@ -188,6 +241,27 @@ let r7 = document.getElementById('r7')
 r7.onclick = recSev.play
 
 
+let box7Animation = anime({
+  targets: '.main__rectangle__7',
+  translateY: '-20vw',
+  translateX: '-20vw',
+  rotate: '40',
+  scale: '4',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__7')
+.on('progress', e => {
+  box7Animation.seek(box7Animation.duration * e.progress)
+})
+
+
 //main__rectangle__8
 
 let recEigh = anime({
@@ -206,6 +280,25 @@ let recEigh = anime({
 let r8 = document.getElementById('r8')
 r8.onclick = recEigh.play
 
+let box8Animation = anime({
+  targets: '.main__rectangle__8',
+  translateY: '-20vw',
+  translateX: '20vw',
+  rotate: '140',
+  scale: '2',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__8')
+.on('progress', e => {
+  box8Animation.seek(box8Animation.duration * e.progress)
+})
 
 
 //main__circle
@@ -230,6 +323,27 @@ funcCirOne.onclick = function() {
   })
 }
 
+let cirAnimation = anime({
+  targets: '.main__circle',
+  translateY: '35vw',
+  translateX: '30vw',
+  rotate: '180',
+  scale: 2,
+  easing: 'linear',
+  autoplay: false
+})
+
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: '0.1',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__circle')
+.on('progress', e => {
+  cirAnimation.seek(cirAnimation.duration * e.progress)
+})
+
 //main__circle__2
 
 let cirTwo = anime({
@@ -249,3 +363,23 @@ let cirTwo = anime({
 
 let c2 = document.getElementById('c2')
 c2.onclick = cirTwo.play
+
+
+let cir2Animation = anime({
+  targets: '.main__circle__2',
+  translateY: '10vw',
+  translateX: '10vw',
+  scale: '7',
+  easing: 'linear',
+  autoplay: false
+})
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__circle__2')
+.on('progress', e => {
+  cir2Animation.seek(cir2Animation.duration * e.progress)
+})
