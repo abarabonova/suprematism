@@ -1,3 +1,4 @@
+let controller = new ScrollMagic.Controller()
 //main__rectangle
 
 let recOne = anime({
@@ -49,6 +50,28 @@ let recTwo = anime({
 let r2 = document.getElementById('r2')
 r2.onclick = recTwo.play
 
+
+let boxAnimation = anime({
+  targets: '.main__rectangle__2',
+  translateY: '-20vw',
+  translateX: '-20vw',
+  rotate: '200',
+  easing: 'linear',
+  duration: 2000,
+  autoplay: false
+})
+let mainSection = document.querySelector('#main-section')
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__2')
+.on('progress', e => {
+  boxAnimation.seek(boxAnimation.duration * e.progress)
+})
+
 //main__rectangle__3
 
 let recThree = anime({
@@ -58,13 +81,33 @@ let recThree = anime({
   rotate: 190,
   direction: 'alternate',
   loop: true,
-  duration: 2000,
   easing: 'easeInOutQuart',
   autoplay: false
 })
 
 let r3 = document.getElementById('r3')
 r3.onclick = recThree.play
+
+let recAnimation = anime({
+  targets: '.main__rectangle__3',
+  translateY: '5vw',
+  translateX: '60vw',
+  rotate: '180',
+  easing: 'linear',
+  autoplay: false
+})
+
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle__3')
+.on('progress', e => {
+  recAnimation.seek(recAnimation.duration * e.progress)
+})
+
 
 
 //main__rectangle__4
