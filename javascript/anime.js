@@ -13,6 +13,8 @@ let recOne = anime({
 let r1 = document.getElementById('r1')
 r1.onclick = recOne.play
 
+
+
 let prevTranslateXRecOne = 0
 let funcRecOne = document.getElementById('r1')
 funcRecOne.onclick = function() {
@@ -32,6 +34,28 @@ funcRecOne.onclick = function() {
     }
   })
 }
+
+let box1Animation = anime({
+  targets: '.main__rectangle',
+  translateY: '-20vw',
+  translateX: '-20vw',
+  rotate: '200',
+  scale: 2,
+  easing: 'linear',
+  offset: 300,
+  autoplay: false
+})
+let mainSection = document.querySelector('#main-section')
+new ScrollMagic.Scene({
+  triggerElement: mainSection,
+  triggerHook: 'onLeave',
+  duration: mainSection.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin('.main__rectangle')
+.on('progress', e => {
+  box1Animation.seek(box1Animation.duration * e.progress)
+})
 
 
 //main__rectangle__2
@@ -57,10 +81,10 @@ let boxAnimation = anime({
   translateX: '-20vw',
   rotate: '200',
   easing: 'linear',
-  duration: 2000,
+  offset: 300,
   autoplay: false
 })
-let mainSection = document.querySelector('#main-section')
+
 new ScrollMagic.Scene({
   triggerElement: mainSection,
   triggerHook: 'onLeave',
@@ -152,7 +176,7 @@ let recFive = anime({
   rotate: 360,
   direction: 'alternate',
   loop: true,
-  duration: 5000,
+  duration: 300,
   easing: 'easeInOutQuart',
   autoplay: false
 })
@@ -327,7 +351,6 @@ let cirAnimation = anime({
   targets: '.main__circle',
   translateY: '35vw',
   translateX: '30vw',
-  rotate: '180',
   scale: 2,
   easing: 'linear',
   autoplay: false
@@ -369,8 +392,9 @@ let cir2Animation = anime({
   targets: '.main__circle__2',
   translateY: '10vw',
   translateX: '10vw',
-  scale: '7',
+  scale: '2',
   easing: 'linear',
+  offset: 50,
   autoplay: false
 })
 new ScrollMagic.Scene({
